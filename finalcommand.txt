@@ -1,0 +1,1 @@
+python server2.py && g++ mainprogram.cpp &&  chmod +x a.out && ./a.out && python ../command.py

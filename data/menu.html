@@ -1,0 +1,49 @@
+
+       <!DOCTYPE html>
+      <html>
+      <head>
+      
+<link href="./jquery/jquery-ui.css" rel="stylesheet" />
+<script type="text/javascript" src="./jquery/jquery.js"></script>
+<script type="text/javascript" src="./jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="./jquery/jquery.canvasjs.min.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	//Better to construct options first and then pass it as a parameter
+	var options1 = {
+		title: {
+			text: "Page Replacement algorithm comparision"
+		},
+                animationEnabled: true,
+		data: [
+		{
+		type: "bar", //change it to line, area, bar, pie, etc
+			dataPoints: [
+{label: "LRU8", y: 9 },{label: "LFU", y: 9 },{label: "SCT", y: 9 },{label: "OPT", y: 8 },{label: "FIFO", y: 11 },
+    ]
+		}
+		]
+  	};
+
+	  $("#resizable").resizable({
+		create: function (event, ui) {
+			//Create chart.
+			$("#chartContainer1").CanvasJSChart(options1);
+		},
+		resize: function (event, ui) {
+			//Update chart size according to its container's size.
+			$("#chartContainer1").CanvasJSChart().render();
+		}
+	  });
+
+    }</script>
+
+      </head>
+      <body><ol>
+      <li><a href="./LRU8.html">LRU8</a></li><li><a href="./LFU.html">LFU</a></li><li><a href="./SCT.html">SCT</a></li><li><a href="./OPT.html">OPT</a></li><li><a href="./FIFO.html">FIFO</a></li>
+  </ol>
+  <div id="resizable" style="height: 300px;border:1px solid gray;">
+	<div id="chartContainer1" style="height: 100%; width: 100%;"></div>
+  </body>
+  </html>
+  

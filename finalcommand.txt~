@@ -1,0 +1,1 @@
+cd ./data && python server2.py && g++ mainprogram.cpp && ./a.out && python ../command.py
